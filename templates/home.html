@@ -3,3 +3,9 @@
 {{ user }}
 
 {{ request.user }}
+
+<form class="" action="." method="post">{% csrf_token %}
+{{ form.as_p }}
+
+<input type='submit' value='Sign Up' />
+</form>
