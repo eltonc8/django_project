@@ -4,4 +4,42 @@ body {
 
 .navbar-static-top {
   margin-bottom: 19px;
+  background-color: #137;
+  border-color: #258;
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+.navbar-default .navbar-brand:hover {
+  color: #aaf;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #aaa
+}
+.navbar-default .navbar-nav>li>a:hover {
+  color: #fff
+}
+.navbar-default .navbar-toggle {
+  border-color: #bbf;
+}
+.navbar-toggle {
+  background-color: #258;
+}
+.navbar-toggle:hover {
+  background-color: #369;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+    .navbar-collapse.collapse.in {
+        display: block !important;
+    }
+    .navbar-header .collapse, .navbar-toggle {
+        display:block !important;
+    }
+    .navbar-header {
+        float:none;
+    }
 }

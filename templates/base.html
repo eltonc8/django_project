@@ -24,15 +24,9 @@
 
     {% include 'navbar.html' %}
 
-    <div class="container">
-      {% block jumbotron %}
-      {% endblock %}
+    {% block jumbotron %}{% endblock %}
 
-      {% block content %}
-
-      {% endblock %}
-
-    </div> <!-- /container -->
+    {% block content %}{% endblock %}
 
 
     <!-- Bootstrap core JavaScript
