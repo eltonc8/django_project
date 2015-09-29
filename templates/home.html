@@ -4,35 +4,56 @@
 {% block head_title %}Welcome | {{ block.super }}{% endblock %}
 
 {% block jumbotron_content %}
-<h1>Hello Viewer example</h1>
-<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-<p>To see the difference between static and fixed top navbars, just scroll.</p>
-<p>
-  <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-</p>
+<div class="row">
+  <div class='col-sm-6'>
+    <h1>Try Django 1.8</h1>
+    <p>This is my exploration into the framework of Django 1.8. So far, I like it.</p>
+    <p>
+      <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+    </p>
+  </div>
+  <div class='col-sm-6' style="background-color:black; min-height: 300px;">
+
+  </div>
+</div>
 {% endblock %}
 
 
 
 {% block jumbotron %}
   {{ block.super }}
-  Hello
 {% endblock %}
 
 {% block content %}
-<h1>{{ template_title }}</h1>
 
-{{ user }}
-
-{{ request.user }}
 <div class="row">
-  <div class="col-sm-6 col-md-3">
+  <div class="col-sm-3 pull-right">
+    <h1>{{ template_title }}</h1>
+
+    {{ user }}
+
+    {{ request.user }}
     <form class="" action="." method="post">{% csrf_token %}
     {{ form|crispy }}
 
     <input class="btn btn-primary" type='submit' value='Sign Up' />
     </form>
 
+  </div>
+  <div class='col-sm-3'>
+    <p class="lead">
+       Built WIth Django &amp; Bootstrap
+    </p>
+  </div>
+  <div class='col-sm-3'>
+    <p class="lead">
+       Created for easy styling.
+    </p>
+  </div>
+  <div class='col-sm-3'>
+    <p class="lead">
+       yay for open source!
+    </p>
   </div>
 </div>
 {% endblock %}
