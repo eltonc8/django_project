@@ -20,6 +20,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^$', 'newsletter.views.home', name='home'),
+    url(r'^about/', 'django_project.views.about', name='about'),
+    url(r'^contact/', 'newsletter.views.contact', name='contact'),
     url(r'^admin/', include(admin.site.urls)),
 ]
 
