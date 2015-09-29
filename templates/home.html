@@ -9,25 +9,21 @@
 {% endblock %}
 </style>
 
-{% block jumbotron_content %}
-<div class="row">
-  <div class='col-sm-6'>
-    <h1>Try Django 1.8</h1>
-    <p class="lead">This is my exploration into the framework of Django 1.8. So far, I like it.</p>
-    <p>
-      <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
-    </p>
-  </div>
-  <div class='col-sm-6' style="background-color:black; min-height: 300px;">
+{% block jumbotron %}
+<div class="jumbotron">
+  <div class="row">
+    <div class='col-sm-6'>
+      <h1>Try Django 1.8</h1>
+      <p class="lead">This is my exploration into the framework of Django 1.8. So far, I like it.</p>
+      <p>
+        <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+      </p>
+    </div>
+    <div class='col-sm-6' style="background-color:black; min-height: 300px;">
 
+    </div>
   </div>
 </div>
-{% endblock %}
-
-
-
-{% block jumbotron %}
-  {{ block.super }}
 {% endblock %}
 
 {% block content %}
