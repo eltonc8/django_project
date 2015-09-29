@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^about/', 'django_project.views.about', name='about'),
     url(r'^contact/', 'newsletter.views.contact', name='contact'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('registration.backends.default.urls')),
 ]
 
 if settings.DEBUG:
