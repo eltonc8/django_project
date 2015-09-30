@@ -19,53 +19,71 @@
 {% block jumbotron %}
 <div class="jumbotron">
   <div class="container">
-  <div class="row">
-    <div class='col-sm-6'>
-      <h1>Try Django 1.8</h1>
-      <p class="lead">This is my exploration into the framework of Django 1.8. So far, I like it.</p>
-      <p>
-        <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
-      </p>
-    </div>
-    <div class='col-sm-6' style="background-color:black; min-height: 300px;">
+    <div class="row">
+      <div class='col-sm-6'>
+        <h1>Try Django 1.8</h1>
+        <p class="lead">This is my exploration into the framework of Django 1.8. So far, I like it.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+        </p>
+      </div>
+      <div class='col-sm-6' style="background-color:black; min-height: 300px;">
 
+      </div>
     </div>
-  </div>
   </div>
 </div>
 {% endblock %}
 
 {% block content %}
 <div class="container">
-<div class="row">
-  <div class="col-sm-3 pull-right">
-    <h1 class="text-align-center">{{ template_title }}</h1>
+  <div class="row">
 
-    {{ user }}
+    {% if queryset %}
+    <h2>Welcome. You are logged in.</h2>
+    <table class='table'>
 
-    {{ request.user }}
-    <form class="" action="." method="post">{% csrf_token %}
-    {{ form|crispy }}
+      {% for instance in queryset %}
+      <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ instance }}</td>
+        <td>{{ instance.full_name }}</td>
+        <td>{{ instance.timestamp|timesince }}</td>
+      </tr>
+      {% endfor %}
+    </table>
 
-    <input class="btn btn-primary" type='submit' value='Sign Up' />
-    </form>
+    {% else %}
+    <div class="col-sm-3 pull-right">
+      <h1 class="text-align-center">{{ template_title }}</h1>
 
-  </div>
-  <div class='col-sm-3'>
-    <p class="lead text-align-center">
-       Built WIth Django &amp; Bootstrap
-    </p>
-  </div>
-  <div class='col-sm-3'>
-    <p class="lead text-align-center">
-       Created for easy styling.
-    </p>
-  </div>
-  <div class='col-sm-3'>
-    <p class="lead text-align-center">
-       yay for open source!
-    </p>
+      {{ user }}
+
+      {{ request.user }}
+      <form class="" action="." method="post">{% csrf_token %}
+        {{ form|crispy }}
+
+        <input class="btn btn-primary" type='submit' value='Sign Up' />
+      </form>
+
+    </div>
+    <div class='col-sm-3'>
+      <p class="lead text-align-center">
+        Built WIth Django &amp; Bootstrap
+      </p>
+    </div>
+    <div class='col-sm-3'>
+      <p class="lead text-align-center">
+        Created for easy styling.
+      </p>
+    </div>
+    <div class='col-sm-3'>
+      <p class="lead text-align-center">
+        yay for open source!
+      </p>
+    </div>
+    {% endif %}
   </div>
 </div>
-</div>
+
 {% endblock %}
