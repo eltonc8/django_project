@@ -1,4 +1,10 @@
 from django.shortcuts import render
 
 def about(request):
-    return render(request, "about.html", {})
+    title = "About Us"
+
+    context = {
+        "title": title,
+    }
+
+    return render(request, "about.html", context)

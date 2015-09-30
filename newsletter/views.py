@@ -6,8 +6,7 @@ from .forms import ContactForm, SignUpForm
 
 # Create your views here.
 def home(request):
-    title = 'Welcome '
-    # if request.user.is_authenticated():
+    title = 'Sign Up Now ' # if request.user.is_authenticated():
     #     title = "My Title %s" %(request.user)
     # if request.method == "POST":
     #     print request.POST
@@ -30,6 +29,11 @@ def home(request):
         instance.save()
         context = {
             "title": "Thank you"
+        }
+
+    if request.user.is_authenticated() and request.user.is_staff:
+        context = {
+            "queryset": [123, 456]
         }
 
     return render(request, "home.html", context)
