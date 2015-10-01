@@ -56,3 +56,5 @@ docs/_build/
 .*swp
 
 .DS_Store
+
+secrets.py
