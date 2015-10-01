@@ -58,3 +58,4 @@ docs/_build/
 .DS_Store
 
 secrets.py
+local.py
